@@ -6,7 +6,8 @@ from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import requests
-import lxml
+from flask import Flask, render_template, redirect
+from flask_pymongo import PyMongo
 
 # Setup splinter
 executable_path = {'executable_path': ChromeDriverManager().install()}
@@ -103,6 +104,22 @@ def scrape_mars():
         u_dict['title'] = pic_titles[q]
         u_dict['url'] = pic_urls[q]
         pics_list.append(u_dict)
+    #close browser
+    browser.quit()
+    #store data in a dict
+    mars_data = {
+    'news_headline': title1,
+    'news_blurb': para1,
+    'daily_img': url1,
+    'html_d_table': mars_html_t,
+    'hemi_pics': pics_list   
+    }
+    return(mars_data)
+    
+
+scrape_mars()
+
+
 
 
 

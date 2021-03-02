@@ -1,4 +1,4 @@
-#automated scraping script and flask app
+#automated scraping script 
 #import dependencies
 
 from bs4 import BeautifulSoup as bs
@@ -9,11 +9,13 @@ import requests
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 
-# Setup splinter
-executable_path = {'executable_path': ChromeDriverManager().install()}
-browser = Browser('chrome', **executable_path, headless=False)
+
 
 def scrape_mars():
+    #setup browser
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless=False)
+    
     #get title information from the first site
     url = "https://mars.nasa.gov/news/"
     response = requests.get(url)
@@ -117,7 +119,7 @@ def scrape_mars():
     return(mars_data)
     
 
-scrape_mars()
+
 
 
 

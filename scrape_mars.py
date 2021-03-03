@@ -101,7 +101,7 @@ def scrape_mars():
     # pics list is the output list for the function   
     pics_list = []
 
-    for q in range(3):
+    for q in range(4):
         u_dict = {}
         u_dict['title'] = pic_titles[q]
         u_dict['url'] = pic_urls[q]

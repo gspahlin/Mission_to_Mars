@@ -17,16 +17,67 @@
         <div class = "jumbotron text-center">
         <h1>Mars Data!</h1>
     </div>
-    <p><a class = "btn btn-primary btn-lg" href = "/scrape" role = "button">Get Today's Data!</a></p>
 
-    <h2> {{ title }} </h2>
-    <br>
-    <p> {{ para }} </p>
+    <div class = "container">
 
-    <h2> Image of the Day! </h2>
-    <img src = {{ m_url }} alt = "mars image" >
-    
-    
+        <div class = "row"></div>
+            <div class = "col-lg-12 text-center">
+                <p><a class = "btn btn-primary btn-lg" href = "/scrape" role = "button">Get Today's Data!</a></p>
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-6 text-center">
+                <h2>Headline of the Day!</h2>
+                <h3> {{ title }} </h3>
+                <br>
+                <p> {{ para }} </p>
+            </div>
+            <div class = "col-md-6 text-center">
+                <h2> Image of the Day! </h2>
+                <img src = {{ m_url }} alt = "mars image" >
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-6 text-center">
+
+               <table>  {{ m_html | safe }} </table>
+
+            </div>        
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-6 text-center">
+
+              <h3> {{ cerb_t }} </h3> 
+              <a href = {{ cerb_url }} > Download Image! </a>
+
+            </div>
+            <div class = "col-md-6 text-center">
+
+                <h3> {{ schi_t }} </h3> 
+                <a href = {{ schi_url }} > Download Image! </a>
+  
+              </div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-6 text-center">
+
+              <h3> {{ syr_t }} </h3> 
+              <a href =  {{ syr_url }} > Download Image! </a>
+
+            </div>
+            <div class = "col-md-6 text-center">
+
+                <h3> {{ val_t }} </h3> 
+                <a href = {{ val_url }}>  Download Image! </a>
+  
+              </div>
+        </div>
 
 
+    </div>
+   
     </body>
